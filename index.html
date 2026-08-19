@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Kashmala Khattak ✨</title>
+
+<title>Happy Birthday Kashmala 🎀</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Pacifico&family=Playfair+Display:wght@500;600&display=swap');
 
 *{
     margin:0;
@@ -14,32 +15,29 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     min-height:100vh;
     overflow-x:hidden;
+    font-family:'DM Sans',sans-serif;
     background:
-        radial-gradient(circle at 20% 20%, rgba(255,215,150,.08), transparent 28%),
-        radial-gradient(circle at 80% 70%, rgba(196,150,255,.08), transparent 30%),
-        #08080d;
-    color:#fff;
-    font-family:'Montserrat',sans-serif;
+        radial-gradient(circle at 20% 20%, #ffd9e8 0%, transparent 30%),
+        radial-gradient(circle at 80% 15%, #ffeaf3 0%, transparent 28%),
+        radial-gradient(circle at 50% 90%, #ffc8dc 0%, transparent 35%),
+        linear-gradient(135deg,#fff0f6,#ffdce9,#ffeaf2);
+    color:#67384d;
 }
 
-/* ===== LOADING ===== */
+/* ================= LOADING ================= */
 
 .loader{
     position:fixed;
     inset:0;
-    background:#08080d;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
+    background:#ffeaf3;
     z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
     transition:1s ease;
 }
 
@@ -48,60 +46,54 @@ body{
     visibility:hidden;
 }
 
-.loader-ring{
-    width:75px;
-    height:75px;
-    border:1px solid rgba(255,215,160,.25);
-    border-top:1px solid #f3d39b;
-    border-radius:50%;
-    animation:spin 1.5s linear infinite;
-    margin-bottom:25px;
+.loader-heart{
+    font-size:42px;
+    animation:heartbeat 1s infinite;
 }
 
 .loader p{
-    font-size:11px;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    color:#c9b58d;
+    margin-top:15px;
+    font-size:12px;
+    letter-spacing:3px;
+    color:#a65b7c;
 }
 
-@keyframes spin{
-    to{transform:rotate(360deg)}
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.25)}
 }
 
-/* ===== BACKGROUND ===== */
+/* ================= FLOATING BACKGROUND ================= */
 
-#particles{
+.floating{
     position:fixed;
-    inset:0;
     pointer-events:none;
-    z-index:0;
+    z-index:1;
+    animation:float 10s linear infinite;
+    opacity:.65;
 }
 
-.particle{
-    position:absolute;
-    width:3px;
-    height:3px;
-    background:#f3d39b;
-    border-radius:50%;
-    opacity:.5;
-    animation:floatUp linear infinite;
-}
-
-@keyframes floatUp{
-    from{
-        transform:translateY(110vh) scale(.5);
+@keyframes float{
+    0%{
+        transform:translateY(110vh) rotate(0deg);
         opacity:0;
     }
-    20%{opacity:.6}
-    80%{opacity:.4}
-    to{
-        transform:translateY(-10vh) scale(1);
+
+    15%{
+        opacity:.7;
+    }
+
+    85%{
+        opacity:.7;
+    }
+
+    100%{
+        transform:translateY(-15vh) rotate(360deg);
         opacity:0;
     }
 }
 
-/* ===== HERO ===== */
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
@@ -114,353 +106,448 @@ body{
     padding:30px 20px;
 }
 
-.hero-inner{
+.hero-box{
     max-width:850px;
+    width:100%;
 }
 
-.small-title{
+.mini{
     font-size:11px;
-    letter-spacing:7px;
+    letter-spacing:4px;
     text-transform:uppercase;
-    color:#cdb98e;
-    margin-bottom:28px;
-    opacity:.9;
+    color:#b05c7e;
+    margin-bottom:22px;
 }
 
 .hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(55px,12vw,125px);
+    font-family:'Pacifico',cursive;
+    font-size:clamp(55px,13vw,115px);
+    font-weight:400;
+    color:#d95c91;
+    text-shadow:
+        0 8px 25px rgba(217,92,145,.2);
+    line-height:1.1;
+}
+
+.hero h2{
+    margin-top:15px;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(22px,5vw,38px);
+    color:#7c4059;
     font-weight:500;
-    line-height:.8;
-    background:linear-gradient(
-        120deg,
-        #fff,
-        #e7c98f,
-        #fff,
-        #b89b65
-    );
-    -webkit-background-clip:text;
-    color:transparent;
-    background-size:250%;
-    animation:goldShine 5s ease-in-out infinite;
 }
 
-@keyframes goldShine{
-    0%,100%{background-position:0%}
-    50%{background-position:100%}
-}
-
-.hero-sub{
-    margin-top:35px;
-    color:#aaa7ad;
-    font-size:13px;
-    letter-spacing:3px;
-}
-
-.line{
-    width:90px;
-    height:1px;
-    background:linear-gradient(90deg,transparent,#d9bd82,transparent);
-    margin:35px auto;
+.subtitle{
+    margin:25px auto;
+    max-width:550px;
+    color:#986477;
+    line-height:1.8;
+    font-size:14px;
 }
 
 .open-btn{
-    position:relative;
-    border:1px solid rgba(220,190,130,.5);
-    background:rgba(255,255,255,.035);
-    color:#f4dfb4;
-    padding:17px 35px;
+    border:none;
+    background:linear-gradient(135deg,#ec76a7,#d9548d);
+    color:white;
+    padding:17px 34px;
     border-radius:50px;
-    font-family:'Montserrat',sans-serif;
-    letter-spacing:3px;
-    font-size:11px;
+    font-size:12px;
+    letter-spacing:2px;
     cursor:pointer;
-    overflow:hidden;
-    transition:.4s;
-}
-
-.open-btn:before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(110deg,transparent,rgba(255,255,255,.15),transparent);
-    transform:translateX(-100%);
-    transition:.6s;
-}
-
-.open-btn:hover:before{
-    transform:translateX(100%);
+    box-shadow:
+        0 12px 30px rgba(213,78,132,.25);
+    transition:.35s;
 }
 
 .open-btn:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 40px rgba(220,190,130,.15);
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:
+        0 18px 40px rgba(213,78,132,.35);
 }
 
-/* ===== MAIN ===== */
+/* ================= MAIN ================= */
 
 .main{
-    position:relative;
-    z-index:2;
-    max-width:950px;
-    margin:auto;
-    padding:0 20px 100px;
     display:none;
+    position:relative;
+    z-index:3;
+    max-width:900px;
+    margin:auto;
+    padding:20px 18px 100px;
 }
 
 .main.show{
     display:block;
-    animation:appear 1.5s ease;
+    animation:showMain 1.2s ease;
 }
 
-@keyframes appear{
+@keyframes showMain{
     from{
         opacity:0;
-        transform:translateY(30px);
+        transform:translateY(50px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
     }
 }
 
-/* ===== BIRTHDAY CARD ===== */
+/* ================= BIRTHDAY CARD ================= */
 
 .card{
     position:relative;
-    padding:70px 35px;
-    border:1px solid rgba(255,255,255,.09);
-    border-radius:30px;
-    background:rgba(255,255,255,.035);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
+    background:rgba(255,255,255,.58);
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:35px;
+    padding:50px 25px 60px;
     text-align:center;
+    box-shadow:
+        0 25px 80px rgba(180,73,116,.13);
+    backdrop-filter:blur(15px);
     overflow:hidden;
 }
 
 .card:before{
     content:"";
     position:absolute;
-    width:300px;
-    height:300px;
-    background:rgba(221,184,112,.08);
-    filter:blur(90px);
+    width:250px;
+    height:250px;
     border-radius:50%;
-    top:-120px;
-    left:-100px;
+    background:#ffc5dc;
+    filter:blur(70px);
+    top:-130px;
+    left:-80px;
+    opacity:.5;
 }
 
 .card:after{
     content:"";
     position:absolute;
-    width:300px;
-    height:300px;
-    background:rgba(160,110,255,.06);
-    filter:blur(90px);
+    width:250px;
+    height:250px;
     border-radius:50%;
-    bottom:-150px;
-    right:-100px;
+    background:#f8b7d2;
+    filter:blur(70px);
+    bottom:-130px;
+    right:-80px;
+    opacity:.5;
 }
 
-.birthday-label{
-    color:#cdb98e;
-    letter-spacing:5px;
+.card-content{
+    position:relative;
+    z-index:2;
+}
+
+.birthday-small{
+    color:#c45d84;
+    letter-spacing:4px;
     font-size:10px;
     text-transform:uppercase;
 }
 
-.card h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(42px,8vw,75px);
-    font-weight:500;
-    margin:20px 0;
+.card h3{
+    margin-top:12px;
+    font-family:'Pacifico',cursive;
+    font-size:clamp(38px,8vw,65px);
+    font-weight:400;
+    color:#d95d91;
 }
 
-.card h2 span{
-    color:#e6c88d;
+/* ================= CAKE ================= */
+
+.cake-area{
+    height:330px;
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    position:relative;
+    margin:10px 0 20px;
 }
+
+/* candles */
+
+.candles{
+    position:absolute;
+    top:38px;
+    display:flex;
+    gap:22px;
+    z-index:5;
+}
+
+.candle{
+    width:13px;
+    height:65px;
+    border-radius:5px;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #fff 0px,
+            #fff 7px,
+            #f18eb4 7px,
+            #f18eb4 13px
+        );
+    position:relative;
+}
+
+.flame{
+    position:absolute;
+    width:16px;
+    height:23px;
+    background:#ffae42;
+    border-radius:60% 40% 60% 40%;
+    left:50%;
+    top:-25px;
+    transform:translateX(-50%) rotate(45deg);
+    box-shadow:
+        0 0 15px #ffb347,
+        0 0 30px rgba(255,174,66,.6);
+    animation:flame 1s infinite alternate;
+}
+
+@keyframes flame{
+    from{
+        transform:translateX(-50%) rotate(40deg) scale(.9);
+    }
+
+    to{
+        transform:translateX(-50%) rotate(50deg) scale(1.1);
+    }
+}
+
+/* cake */
+
+.cake{
+    position:relative;
+    width:250px;
+    height:150px;
+}
+
+.cake-top{
+    position:absolute;
+    width:230px;
+    height:65px;
+    left:10px;
+    top:30px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:
+        inset 0 -8px 0 #f8b2ce;
+}
+
+.cake-body{
+    position:absolute;
+    width:230px;
+    height:85px;
+    left:10px;
+    top:60px;
+    border-radius:0 0 28px 28px;
+    background:
+        linear-gradient(
+            to bottom,
+            #ffd7e6,
+            #f59abd
+        );
+    box-shadow:
+        0 15px 25px rgba(190,72,117,.18);
+}
+
+.cream{
+    position:absolute;
+    width:230px;
+    height:25px;
+    left:10px;
+    top:50px;
+    background:#fff;
+    border-radius:50%;
+    z-index:3;
+}
+
+.berry{
+    position:absolute;
+    width:13px;
+    height:13px;
+    background:#e65e91;
+    border-radius:50%;
+    z-index:4;
+}
+
+.b1{left:45px;top:67px}
+.b2{left:105px;top:58px}
+.b3{left:165px;top:70px}
+.b4{left:130px;top:105px}
+.b5{left:75px;top:110px}
+
+/* cake plate */
+
+.plate{
+    position:absolute;
+    width:290px;
+    height:25px;
+    bottom:20px;
+    left:-20px;
+    background:#fff;
+    border-radius:50%;
+    box-shadow:0 12px 20px rgba(160,75,110,.12);
+}
+
+/* ================= MESSAGE ================= */
 
 .message{
     max-width:650px;
-    margin:30px auto 0;
-    color:#b7b5ba;
+    margin:25px auto 0;
+    color:#83536a;
     line-height:2;
     font-size:14px;
 }
 
-.signature{
-    margin-top:35px;
-    font-family:'Cormorant Garamond',serif;
-    font-size:25px;
-    color:#dfc28b;
-    font-style:italic;
+.highlight{
+    color:#d4578b;
+    font-weight:600;
 }
 
-/* ===== QUOTE ===== */
+/* ================= QUOTE ================= */
 
 .quote{
-    margin:80px auto;
     text-align:center;
-    max-width:700px;
+    margin:80px auto;
+    max-width:650px;
 }
 
-.quote-mark{
-    font-family:Georgia,serif;
-    font-size:70px;
-    color:#c9aa72;
-    opacity:.5;
+.quote-icon{
+    font-size:45px;
+    color:#e486aa;
 }
 
 .quote p{
-    font-family:'Cormorant Garamond',serif;
-    font-size:32px;
-    line-height:1.3;
-    color:#ddd;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(23px,5vw,35px);
+    line-height:1.5;
+    color:#75465c;
 }
 
 .quote small{
     display:block;
-    margin-top:20px;
-    color:#8f8c94;
-    letter-spacing:3px;
-    font-size:9px;
+    margin-top:15px;
+    color:#b26a86;
 }
 
-/* ===== SURPRISE ===== */
+/* ================= SURPRISE ================= */
 
 .surprise{
     text-align:center;
-    padding:65px 20px;
+    padding:50px 20px;
 }
 
-.surprise h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:42px;
-    font-weight:500;
+.surprise h4{
+    font-family:'Pacifico',cursive;
+    font-size:38px;
+    color:#d75b90;
+    font-weight:400;
 }
 
 .surprise p{
-    color:#8f8c94;
-    font-size:12px;
-    margin:15px 0 30px;
+    margin:15px auto 25px;
+    color:#936075;
 }
 
-.reveal{
-    border:1px solid rgba(220,190,130,.35);
-    background:transparent;
-    color:#e7cc97;
-    padding:14px 30px;
-    border-radius:30px;
+.reveal-btn{
+    border:2px solid #ec8bb2;
+    background:#fff6fa;
+    color:#ce5a88;
+    padding:13px 27px;
+    border-radius:50px;
     cursor:pointer;
+    font-size:11px;
     letter-spacing:2px;
-    font-size:10px;
-    transition:.4s;
+    transition:.3s;
 }
 
-.reveal:hover{
-    background:rgba(220,190,130,.08);
+.reveal-btn:hover{
+    background:#ec8bb2;
+    color:white;
 }
 
-.hidden-message{
-    max-width:600px;
-    margin:35px auto 0;
-    line-height:2;
-    color:#bbb7bf;
+.hidden{
     display:none;
-    animation:fadeMessage 1s ease;
+    max-width:620px;
+    margin:30px auto 0;
+    padding:30px;
+    border-radius:25px;
+    background:rgba(255,255,255,.65);
+    color:#7d5267;
+    line-height:2;
+    box-shadow:0 15px 40px rgba(170,70,110,.1);
 }
 
-.hidden-message.show{
+.hidden.show{
     display:block;
+    animation:messageIn 1s ease;
 }
 
-@keyframes fadeMessage{
+@keyframes messageIn{
     from{
         opacity:0;
-        transform:translateY(15px);
+        transform:scale(.92);
     }
+
     to{
         opacity:1;
-        transform:translateY(0);
+        transform:scale(1);
     }
 }
 
-/* ===== FOOTER ===== */
+/* ================= FOOTER ================= */
 
 footer{
     position:relative;
-    z-index:2;
+    z-index:3;
     text-align:center;
-    padding:30px 20px 50px;
-    color:#5f5d63;
-    font-size:9px;
-    letter-spacing:3px;
-    text-transform:uppercase;
+    padding:25px;
+    color:#a66b82;
+    font-size:10px;
+    letter-spacing:2px;
 }
 
-footer span{
-    color:#bda16d;
-}
-
-/* ===== FLOWERS ===== */
-
-.flower{
-    position:fixed;
-    pointer-events:none;
-    z-index:1;
-    font-size:18px;
-    opacity:.12;
-    animation:flowerFloat 12s linear infinite;
-}
-
-@keyframes flowerFloat{
-    0%{
-        transform:translateY(105vh) rotate(0deg);
-    }
-    100%{
-        transform:translateY(-10vh) rotate(360deg);
-    }
-}
-
-/* ===== MOBILE ===== */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
     .hero{
-        min-height:95vh;
+        min-height:92vh;
     }
 
-    .small-title{
-        letter-spacing:4px;
-        font-size:9px;
+    .hero h1{
+        font-size:60px;
     }
 
-    .hero-sub{
-        font-size:10px;
-        letter-spacing:2px;
-        line-height:1.8;
+    .hero h2{
+        font-size:23px;
+    }
+
+    .subtitle{
+        font-size:13px;
     }
 
     .card{
-        padding:55px 22px;
-        border-radius:24px;
+        padding:40px 15px 50px;
+    }
+
+    .cake-area{
+        transform:scale(.85);
+        height:290px;
     }
 
     .message{
         font-size:13px;
-        line-height:1.9;
     }
 
     .quote{
         margin:60px auto;
     }
 
-    .quote p{
-        font-size:27px;
-    }
-
-    .surprise h3{
-        font-size:36px;
+    .surprise h4{
+        font-size:32px;
     }
 }
 </style>
@@ -469,44 +556,45 @@ footer span{
 <body>
 
 <!-- LOADER -->
+
 <div class="loader" id="loader">
-    <div class="loader-ring"></div>
-    <p>Preparing something special</p>
+    <div class="loader-heart">💗</div>
+    <p>Preparing a little surprise...</p>
 </div>
 
-<!-- PARTICLES -->
-<div id="particles"></div>
 
-<!-- FLOATING FLOWERS -->
-<div class="flower" style="left:8%;animation-delay:1s;">✿</div>
-<div class="flower" style="left:25%;animation-delay:5s;">✧</div>
-<div class="flower" style="left:48%;animation-delay:2s;">❀</div>
-<div class="flower" style="left:70%;animation-delay:7s;">✿</div>
-<div class="flower" style="left:88%;animation-delay:4s;">✧</div>
+<!-- FLOATING DECORATIONS -->
+
+<div class="floating" style="left:5%;font-size:25px;animation-delay:1s;">🎈</div>
+<div class="floating" style="left:18%;font-size:18px;animation-delay:5s;">🌸</div>
+<div class="floating" style="left:35%;font-size:22px;animation-delay:2s;">💕</div>
+<div class="floating" style="left:55%;font-size:25px;animation-delay:7s;">🎀</div>
+<div class="floating" style="left:75%;font-size:20px;animation-delay:4s;">🌷</div>
+<div class="floating" style="left:90%;font-size:25px;animation-delay:8s;">🎈</div>
+
 
 <!-- HERO -->
+
 <section class="hero">
 
-    <div class="hero-inner">
+    <div class="hero-box">
 
-        <div class="small-title">
-            A little something for someone special
+        <div class="mini">
+            A little surprise made just for you
         </div>
 
-        <h1>
-            Kashmala
-        </h1>
+        <h1>Kashmala</h1>
 
-        <div class="line"></div>
+        <h2>It's Your Special Day 🎀</h2>
 
-        <div class="hero-sub">
-            TODAY ISN'T JUST ANOTHER DAY
-        </div>
+        <p class="subtitle">
+            Today deserves a little extra happiness,
+            a little more sparkle,
+            and a beautiful reason to smile. 💗
+        </p>
 
-        <br>
-
-        <button class="open-btn" onclick="openSurprise()">
-            OPEN YOUR SURPRISE ✦
+        <button class="open-btn" onclick="openBirthday()">
+            OPEN YOUR SURPRISE ✨
         </button>
 
     </div>
@@ -514,86 +602,146 @@ footer span{
 </section>
 
 
-<!-- MAIN CONTENT -->
+<!-- MAIN -->
+
 <main class="main" id="main">
 
-    <!-- BIRTHDAY CARD -->
     <section class="card">
 
-        <div class="birthday-label">
-            Happy Birthday
-        </div>
+        <div class="card-content">
 
-        <h2>
-            Dear <span>Kashmala</span>
-        </h2>
+            <div class="birthday-small">
+                A very special day
+            </div>
 
-        <div class="line"></div>
+            <h3>Happy Birthday</h3>
 
-        <p class="message">
-            Some people make ordinary moments feel a little more special,
-            and your presence is genuinely one of those little things
-            that deserves to be appreciated.
-            <br><br>
-            On your special day, I simply wish you a year filled with
-            beautiful memories, genuine happiness, endless smiles,
-            and all the success your heart wishes for.
-            <br><br>
-            May every new chapter of your life bring you something
-            better than the last.
-        </p>
+            <!-- CAKE -->
 
-        <div class="signature">
-            Stay happy. Stay amazing. ✨
+            <div class="cake-area">
+
+                <div class="candles">
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                    <div class="candle">
+                        <div class="flame"></div>
+                    </div>
+
+                </div>
+
+                <div class="cake">
+
+                    <div class="cake-top"></div>
+
+                    <div class="cream"></div>
+
+                    <div class="cake-body"></div>
+
+                    <div class="berry b1"></div>
+                    <div class="berry b2"></div>
+                    <div class="berry b3"></div>
+                    <div class="berry b4"></div>
+                    <div class="berry b5"></div>
+
+                    <div class="plate"></div>
+
+                </div>
+
+            </div>
+
+            <h3 style="font-size:38px;">
+                Kashmala Khattak 💗
+            </h3>
+
+            <p class="message">
+
+                Wishing you the happiest birthday! 🌸
+                <br><br>
+
+                May your life always be filled with
+                beautiful moments, genuine happiness,
+                endless smiles and people who truly
+                appreciate you.
+
+                <br><br>
+
+                May this new chapter bring you closer
+                to your dreams and give you countless
+                reasons to smile.
+
+                <br><br>
+
+                Stay happy, stay blessed and keep being
+                the <span class="highlight">wonderful person you are.</span> 🎀
+
+            </p>
+
         </div>
 
     </section>
 
 
     <!-- QUOTE -->
+
     <section class="quote">
 
-        <div class="quote-mark">“</div>
+        <div class="quote-icon">🌷</div>
 
         <p>
-            May your life always be surrounded
-            by beautiful moments worth remembering.
+            “May your birthday be the beginning
+            of a beautiful year full of moments
+            you'll always remember.”
         </p>
 
         <small>
-            A little birthday wish
+            — A little birthday wish for you
         </small>
 
     </section>
 
 
     <!-- SURPRISE -->
+
     <section class="surprise">
 
-        <h3>
-            One More Thing...
-        </h3>
+        <h4>One More Little Surprise...</h4>
 
         <p>
-            Because one birthday wish was never enough.
+            Because one birthday wish is never enough. 💕
         </p>
 
-        <button class="reveal" onclick="revealMessage()">
-            REVEAL ✦
+        <button class="reveal-btn" onclick="reveal()">
+            OPEN IT 🎁
         </button>
 
-        <div class="hidden-message" id="hiddenMessage">
+        <div class="hidden" id="hidden">
 
-            <p>
-                Kashmala, I hope this new year of your life brings you
-                countless reasons to smile. 🌸
-                <br><br>
-                Keep being the wonderful person you are,
-                keep chasing your dreams, and never let the world
-                take away that beautiful spark within you.
-                <br><br>
-                <strong>Happy Birthday once again. 🤍</strong>
-            </p>
+            Kashmala, I hope this little surprise
+            puts a genuine smile on your face. 🌸
+
+            <br><br>
+
+            May you always have the courage to chase
+            your dreams, the strength to overcome every
+            challenge, and plenty of beautiful moments
+            to look back on.
+
+            <br><br>
+
+            <strong>
+                Happy Birthday once again, Kashmala! 🎂💗
+            </strong>
+
+            <br><br>
+
+            Keep smiling — it suits you. ✨
 
         </div>
 
@@ -603,126 +751,128 @@ footer span{
 
 
 <footer>
-    Made with ✦ for <span>Kashmala Khattak</span>
+    Made with 💗 for Kashmala Khattak
 </footer>
 
 
 <script>
 
-/* ===== LOADER ===== */
+/* ================= LOADER ================= */
 
-window.addEventListener("load", () => {
+window.addEventListener("load",function(){
 
-    setTimeout(() => {
-        document.getElementById("loader").classList.add("hide");
-    }, 1500);
+    setTimeout(function(){
+
+        document.getElementById("loader")
+        .classList.add("hide");
+
+    },1500);
 
 });
 
 
-/* ===== PARTICLES ===== */
+/* ================= OPEN BIRTHDAY ================= */
 
-const particles = document.getElementById("particles");
-
-for(let i = 0; i < 45; i++){
-
-    const p = document.createElement("div");
-
-    p.className = "particle";
-
-    p.style.left = Math.random() * 100 + "%";
-    p.style.animationDuration = (7 + Math.random() * 12) + "s";
-    p.style.animationDelay = Math.random() * 10 + "s";
-
-    const size = 1 + Math.random() * 3;
-
-    p.style.width = size + "px";
-    p.style.height = size + "px";
-
-    particles.appendChild(p);
-}
-
-
-/* ===== OPEN SURPRISE ===== */
-
-function openSurprise(){
+function openBirthday(){
 
     const main = document.getElementById("main");
 
     main.classList.add("show");
 
-    setTimeout(() => {
+    setTimeout(function(){
 
         main.scrollIntoView({
             behavior:"smooth"
         });
 
-        createConfetti();
+        confetti();
 
-    },300);
-}
-
-
-/* ===== REVEAL MESSAGE ===== */
-
-function revealMessage(){
-
-    const msg = document.getElementById("hiddenMessage");
-
-    msg.classList.add("show");
-
-    createConfetti();
+    },400);
 
 }
 
 
-/* ===== CONFETTI ===== */
+/* ================= REVEAL ================= */
 
-function createConfetti(){
+function reveal(){
 
-    const symbols = ["✦","✧","✿","❀","♡","•"];
+    const hidden =
+        document.getElementById("hidden");
 
-    for(let i = 0; i < 35; i++){
+    hidden.classList.add("show");
 
-        const piece = document.createElement("div");
+    confetti();
 
-        piece.innerHTML =
-            symbols[Math.floor(Math.random()*symbols.length)];
+}
 
-        piece.style.position = "fixed";
-        piece.style.left = Math.random()*100 + "vw";
-        piece.style.top = "-20px";
-        piece.style.zIndex = "999";
-        piece.style.pointerEvents = "none";
-        piece.style.fontSize = (10 + Math.random()*15) + "px";
-        piece.style.color = "#e6c88d";
 
-        document.body.appendChild(piece);
+/* ================= CONFETTI ================= */
 
-        const duration = 1800 + Math.random()*1800;
+function confetti(){
 
-        piece.animate(
+    const items = [
+        "💗",
+        "🌸",
+        "✨",
+        "🎀",
+        "💕",
+        "🌷",
+        "🎉"
+    ];
+
+    for(let i=0;i<55;i++){
+
+        const item =
+            document.createElement("div");
+
+        item.innerHTML =
+            items[Math.floor(
+                Math.random()*items.length
+            )];
+
+        item.style.position="fixed";
+        item.style.left=
+            Math.random()*100+"vw";
+
+        item.style.top="-30px";
+
+        item.style.zIndex="9999";
+        item.style.pointerEvents="none";
+
+        item.style.fontSize=
+            (12+Math.random()*16)+"px";
+
+        document.body.appendChild(item);
+
+        const duration=
+            2000+Math.random()*2500;
+
+        item.animate(
             [
                 {
-                    transform:"translateY(0) rotate(0deg)",
+                    transform:
+                        "translateY(0) rotate(0deg)",
                     opacity:1
                 },
+
                 {
                     transform:
-                        `translateY(110vh) rotate(${360 + Math.random()*500}deg)`,
+                        `translateY(110vh) rotate(${360+Math.random()*600}deg)`,
                     opacity:0
                 }
             ],
             {
                 duration:duration,
-                easing:"cubic-bezier(.2,.8,.3,1)"
+                easing:"cubic-bezier(.2,.7,.3,1)"
             }
         );
 
-        setTimeout(() => {
-            piece.remove();
+        setTimeout(()=>{
+            item.remove();
         },duration);
+
     }
+
 }
 
 </script>
